@@ -1,0 +1,78 @@
+{% extends "app1/base.html" %}
+{% block title %}
+  Edit Profile
+{% endblock title %}
+
+
+{% block content %}
+<div class="container mt-3">
+    <div class="card p-3"> 
+      <h3 class="text-danger text-capitalize" style="border-bottom:2px solid orange">Profile Details And Edit</h3>
+
+      <div class="container">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="" class="">First Name:-</label>
+                        <input type="text" name="first_name" class="form-control" placeholder="Enter First Name" value="{{profile.user.first_name}}">
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="" class="">Last Name:-</label>
+                        <input type="text" name="last_name" class="form-control" placeholder="Enter Last Name" value="{{profile.user.last_name}}">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="" class="">Country:-</label>
+                        <input type="text" name="country" class="form-control" placeholder="Enter Country"  value="{{profile.country}}">
+                    </div>
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="" class="">Email:-</label>
+                        <input type="email" name="email" class="form-control" placeholder="Enter Email" value="{{profile.user.username}}">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="" class="">Employee Designation:-</label>
+                        <input type="text" name="state" class="form-control" placeholder="State" value="{{profile.state}}">
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <label for="" class="">Employee Department:-</label>
+                        <input type="text" name="city" class="form-control" placeholder="City" value="{{profile.city}}">
+                    </div>
+                </div>
+ 
+                <input type="submit" value="submit" class="btn btn-success mt-2">
+                <a href="{% url 'profile' %}" class="btn btn-danger mt-2">Back</a>
+            </div>
+        </form>
+    </div>
+</div>
+    </div>
+
+    
+ 
+{% if error == "no" %}
+    <script>
+      alert("Profile Updated Successfully..");
+      window.location = "{% url 'profile' %}";
+     
+    </script>
+{% endif %}
+
+{% if error == "yes" %}
+    <script>
+        alert("Something went wrong , try Again...");
+    </script>
+{% endif %}
+{% endblock content %}

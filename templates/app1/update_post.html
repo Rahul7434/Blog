@@ -1,0 +1,68 @@
+{% extends "app1/base.html" %}
+
+{% block title %}
+   Update post
+{% endblock title %}
+
+
+{% block content %}
+  <div class="container card mt-2 bg-light text-center mb-2">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="col-12 mt-2">
+                <label for="" class="bg-dark text-white p-1 rounded-2">Title:-</label>
+                <div>{{form.title}}</div>
+            </div>
+
+            <div class="col-12 mt-2">
+                <label for="" class="bg-dark text-white p-1 rounded-2">Content:-</label>
+                <textarea name="content" id="content_id" value="{{post.form.content}}"></textarea>
+            </div>
+
+            <div class="col-12 mt-2">
+                <label for="" class="bg-dark text-white p-1 rounded-2">Url:-</label>
+                <div>{{form.url}}</div>
+            </div>
+
+            <div class="col-12 mt-2">
+                <label for=""class="bg-dark text-white p-1 rounded-2">Category_Id:-</label>
+                <div class="mt-1">{{form.cat_id}}</div>
+            </div>
+
+            <div class="col-12 mt-2">
+                <label for=""class="bg-dark text-white p-1 rounded-2">Image:-</label>
+                <div>{{form.image}}</div>
+            </div>
+
+            <div class="col-12 mt-2">
+                <label for="" class="bg-dark text-white p-1 rounded-2">Video:-</label>
+                <div>{{form.video}}</div>
+            </div>
+        </div>
+        <input type="submit" value="Update" class="btn btn-success mt-2 rounded-3">
+    </form>
+  </div>
+
+<script>
+    tinymce.init({
+        selector: "#content_id",
+        plugins: "textcolor bold",
+        toolbar: "forecolor backcolor bold",
+    });
+</script>
+
+{% if error == 'no' %}
+    <script>
+        alert("Updated Successfull");
+        window.location=("{% url 'home' %}")
+    </script>
+{% endif %}
+
+{% if error == 'yes' %}
+    <script>
+        alert("Something Was Wrong!!!");
+    </script>
+{% endif %}
+
+{% endblock content %}

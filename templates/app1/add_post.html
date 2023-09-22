@@ -1,0 +1,74 @@
+{% extends "app1/base.html" %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <h3 class="text-center p-2 card bg-light text-danger">Enter Your Post Related Detail</h3>
+
+    <div class="card p-3 text-center bg-light mt-2" style="border: 2px solid black;">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-row">
+                <div class="col-12 mt-2">
+                    <label for="">Title:-</label>
+                    <input type="text" vlaue="{{post.form.title}}" name="title">
+                        
+                </div>
+
+                <div class="col-12 mt-2">
+                    <label for="">Content:-</label>
+                    <textarea id="content_id" name="content" value="{{post.form.content }}"></textarea>
+                </div>
+
+                <div class="col-12 mt-2">
+                    <label for="">Url:-</label>
+                     <input type="text" name='url' value="{{post.form.url}}"/>
+                </div>
+
+                <div class="col-12 mt-2">
+                    <label for="">Category_Id:-</label>
+                    <div>{{form.cat_id}}</div>
+                </div>
+
+                <div class="col-12 mt-2">
+                    <label for="">Image:-</label>
+                    <div>{{form.image}}</div>
+                </div>
+
+                <div class="col-12 mt-2">
+                    <label for="">Video:-</label>
+                    <div>{{form.video}}</div>
+                </div>
+
+            </div>
+            <input type="submit" value="Save" class="btn btn-success mt-2">
+        </form>
+
+        {% for cat in category %}
+            <a href="/category/{{cat.url}}" class="btn btn bg-primary mt-2 text-white" id="">View Posts...</a>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    tinymce.init({
+        selector: "#content_id",
+        plugins: "textcolor bold",
+        toolbar: "forecolor backcolor bold",
+    });
+</script>
+
+{% if error == "no" %}
+    <script>
+        alert("submited");
+        window.location=("{% url 'home' %}")
+    </script>
+{% endif %}
+
+{% if error == "yes" %}
+    <script>
+        alert("Something was Wrong!!!");
+        window.location=("{% url 'add_post' %}")
+    </script>
+{% endif %}
+{% endblock content %}

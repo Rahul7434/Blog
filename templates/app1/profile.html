@@ -1,0 +1,17 @@
+{% extends "app1/profilebase.html" %}
+{% load static %}
+
+{% block main %}
+<div class="card p-3 mt-4">
+  <h3 class="text-danger" style="border-bottom: 2px solid black;">Employee Dashboard</h3>
+
+  <div class="container mt-3">
+    <div class="row">
+        <div class="col-sm-12">
+            <h6 class="text-success">User Name:-</h6>
+            <h5>{{request.user.first_name}} {{request.user.last_name}}</h5>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock main %}

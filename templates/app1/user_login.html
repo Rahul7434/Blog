@@ -1,0 +1,62 @@
+{% extends "app1/base.html" %}
+{% load static %}
+
+{% block title %}
+  User_login
+{% endblock title %}
+
+{% block content %}
+  <div class="container">
+    <div class="card p-3 mt-2 bg-light">
+      <h3 class="text-danger text-capitalize">User Login</h3>
+
+      <div class="container mt-3">
+        <form action="" method="POST">
+          {% csrf_token %}
+
+          <div class="form-row">
+            <div class="col-sm-12">
+              <div class="form-group">
+              <label for="">Email ID</label>
+              <input type="email" name="email" placeholder="Enter Email" required class="form-control">
+              </div>
+            </div>
+            
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label for="">Password</label>
+                <input type="password" name="password" placeholder="Enter Password" required class="form-control">
+              </div>
+            </div>
+            <input type="submit" value="Login" class="btn btn-success mt-2">
+            <a href="{% url 'registration' %}" class="btn btn-primary mt-2">Sign-Up</a>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+
+  </div>
+
+  
+{% if error == 'no' %}
+  <script>
+    alert("Login Successful")
+    window.location="{% url 'home' %}";
+  </script>
+{% endif %}
+
+{% if error == 'yes' %}
+<script>
+  alert("Please Sign-Up....")
+  window.location="{% url 'registration' %}"
+</script>
+{% endif %}
+
+{% if error == 'pwd' %}
+<script>
+  alert("Password Is Wrong Try Again....")
+</script>
+{% endif %}
+{% endblock content %}

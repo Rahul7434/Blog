@@ -1,0 +1,37 @@
+{% extends "app1/base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Home Page{% endblock title %}</title>
+</head>
+<body>
+    {% block content %} 
+      <div class="container mt-2">
+        <div class="row">
+          <div class="col-sm-12">
+            {% for cat in cats  %}
+                <div class="row">
+                  <div class="col-sm-12 mt-2 p-3" id="category_title">
+                      <h3 class="text-center">{{cat.title}}:-</h3>
+                  </div>
+                  <div class="col-sm-6 mb-2">
+                    <img src="/media/{{cat.image}}" alt="" class="img-fluid mt-2">
+                  </div>
+                </div>
+
+                <div class="col-sm-12 p-2 mb-2" style="border: 2px solid black;">
+                  <p>{{cat.description | truncatewords:60 | safe}}</p>
+                  <a href="/category/{{cat.url}}" class="btn btn bg-primary text-white mb-3" id="view_post">View Posts...</a>
+
+                </div>      
+            {% endfor %}
+
+          </div>
+        </div>
+      </div>      
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends "app1/base.html" %}
+{% load static %}
+{% block content %}
+<div class="container row mt-2">
+    <div class="col-sm-4">
+        <img src="{% static 'app1/images/icon.png' %}" alt="" width="100" height="100" class="img-thumbnail rounded-circle mt-2">
+    
+        <div class="list-group mt-2"> 
+            <a href="{% url 'profile' %}" class="list-group-item list-group-item-warning {% if request.path == '/profile/' %} active {% endif %}">Dashboard</a>
+            <a href="{% url 'profile_edit' %}" class="list-group-item list-group-item-warning {% if request.path == '/profile_edit/' %} active {% endif %}">Profile Detail & Update</a>
+            <a href="{% url 'change_password' %}" class="list-group-item list-group-item-warning {% if request.path == '/change_password/' %} active {% endif %}">Change Password</a>
+            <a href="{% url 'logout_user' %}" class="list-group-item list-group-item-warning {% if request.path == '/logout_user/' %} active {% endif %}">Logout</a>
+        </div>
+    </div>
+        <div class="col-sm-8 mt-4">
+            <div class="container p-2">
+                <h3 class="text-center alert" style="border-bottom:2px solid green; border-top:2px solid green">Blogs</h3>
+    
+                <div class="card bg-light p-2">
+                    <div class="card-body">
+                    {% block main %} 
+                            
+                    {% endblock main %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
