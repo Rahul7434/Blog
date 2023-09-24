@@ -61,4 +61,4 @@ allows us to do this by serving  application on a local development URL (usually
 4. ```py manage.py createsuperuser``` For manage admin interface. you can access the admin panel at http://127.0.0.1:8000/admin/ by default.
 
  ##  When you Run the server it will give http://127.0.0.1:800/ Url copy this URL and run on any  browser, but your server must be running.
- ![Img](redmeimg/runserver1.jpg)
+
