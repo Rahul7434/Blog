@@ -51,9 +51,14 @@
 # Usage
 
 1. Run This Command For Creating Project  ```django-admin startproject projectname``` For Example: ```django-admin startproject Blogs``` open Blogs ```cd blogs``` Then create app ```py manage.py startapp app1```
+
+  
 2. ```py manage.py makemigrations``` (it will generate python code to the sql query) Then ```py manage.py migrate```(it will save the all sql generated code in database).
+  
 3. Run the  Server ```py manage.py runserver``` it starts a lightweight development web server provided by Django.
 allows us to do this by serving  application on a local development URL (usually http://127.0.0.1:8000/ by default). This makes it easy to test our views, templates, and application logic.
+
 4. ```py manage.py createsuperuser``` For manage admin interface. you can access the admin panel at http://127.0.0.1:8000/admin/ by default.
 
-   
+ ##  When you Run the server it will give http://127.0.0.1:800/ Url copy this URL and run on any  browser, but your server must be running.
+ 
