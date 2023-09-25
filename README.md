@@ -47,7 +47,7 @@
                      - all templates files
              - manage.py
 
-
+ 
 # Usage
 
 1. Run This Command For Creating Project  ```django-admin startproject projectname``` For Example: ```django-admin startproject Blogs``` open Blogs ```cd blogs``` Then create app ```py manage.py startapp app1```
@@ -59,6 +59,9 @@
 allows us to do this by serving  application on a local development URL (usually http://127.0.0.1:8000/ by default). This makes it easy to test our views, templates, and application logic.
 
 4. ```py manage.py createsuperuser``` For manage admin interface. you can access the admin panel at http://127.0.0.1:8000/admin/ by default.
+
+### Note:- 
+      Insite Repositery there not have Media folder but you create it insideproject folder for the store user-uploaded files such as images,videos,documents etc.
 
  ##  When you Run the server it will give http://127.0.0.1:800/ Url copy this URL and run on any  browser, but your server must be running.
 
