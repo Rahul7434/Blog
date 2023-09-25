@@ -2,7 +2,7 @@
 
  This Django project, titled "Blog," is a web application for managing blog posts and user profiles. It includes features for creating, viewing, updating, and deleting blog posts, as well as user registration and profile management.
 
-## Installation & Project Creaction
+## Installation
 
 1. Python Installation
     - Visit the Official Website  https://www.python.org/.
@@ -48,7 +48,7 @@
              - manage.py
 
  
-# Usage
+# Project Creation
 
 1. Run This Command For Creating Project  ```django-admin startproject projectname``` For Example: ```django-admin startproject Blogs``` open Blogs ```cd blogs``` Then create app ```py manage.py startapp app1```
 
