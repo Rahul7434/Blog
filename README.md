@@ -63,5 +63,3 @@ allows us to do this by serving  application on a local development URL (usually
  ##  When you Run the server it will give http://127.0.0.1:800/ Url copy this URL and run on any  browser, but your server must be running.
 
  ![runserver1](https://github.com/Rahul7434/Blog/assets/138716867/5bbe2d89-7fca-4b0d-bf9b-8db6b9a39b29)
-
-
